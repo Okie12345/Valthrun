@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 
 :: Define script title and set initial variables
 set "script_version=3.1"
-title "Valthrunner's Script v!script_version!"
+title "SalmonDev's Script v!script_version!"
 set "mode=0"
 
 :: Set mode based on arguments
@@ -11,11 +11,11 @@ if "%~1"=="run" (
     echo.
 ) else if "%~1"=="run_userperms" (
     set "mode=1"
-    title "Valthrunner's Script v!script_version! (with user perms for controller)"
+    title "SalmonDev's Script v!script_version! (with user perms for controller)"
     echo.
 ) else if "%~1"=="run_radar" (
     set "mode=2"
-    title "Valthrunner's Script v!script_version! Radar Version obsolete ;)"
+    title "SalmonDev's Script v!script_version! Radar Version obsolete ;)"
     mode 95, 40
     echo.
 ) else (
@@ -122,12 +122,14 @@ exit
 :displayHeader
 :: Display ASCII art header
 echo.
-:::[1[37m  _   __     ____  __                              [31m/[37m       ____        _      __ [0m
-:::[1[93m | | / /__ _/ / /_/ /  ______ _____  ___  ___ ____  ___   / __/_______(_)__  / /_[0m
-:::[1[33m | |/ / _ `/ / __/ _ \/ __/ // / _ \/ _ \/ -_) __/ (_-<  _\ \/ __/ __/ / _ \/ __/[0m
-:::[1[31m |___/\_,_/_/\__/_//_/_/  \_,_/_//_/_//_/\__/_/   /___/ /___/\__/_/ /_/ ___/\__/ [0m
-:::[1[31m                                                                     /_/         [0m
-
+:::[1[31m   /$$$$$$            /$$                                   /$$$$$$$                      [0m
+:::[1[31m  /$$__  $$          | $$                                  | $$__  $$                     [0m
+:::[1[31m | $$  \__/  /$$$$$$ | $$ /$$$$$$/$$$$   /$$$$$$  /$$$$$$$ | $$  \ $$  /$$$$$$  /$$    /$$[0m
+:::[1[31m |  $$$$$$  |____  $$| $$| $$_  $$_  $$ /$$__  $$| $$__  $$| $$  | $$ /$$__  $$|  $$  /$$/[0m
+:::[1[31m  \____  $$  /$$$$$$$| $$| $$ \ $$ \ $$| $$  \ $$| $$  \ $$| $$  | $$| $$$$$$$$ \  $$/$$/ [0m
+:::[1[31m  /$$  \ $$ /$$__  $$| $$| $$ | $$ | $$| $$  | $$| $$  | $$| $$  | $$| $$_____/  \  $$$/   [0m
+:::[1[31m |  $$$$$$/|  $$$$$$$| $$| $$ | $$ | $$|  $$$$$$/| $$  | $$| $$$$$$$/|  $$$$$$$   \  $/    [0m
+:::[1[31m  \______/  \_______/|__/|__/ |__/ |__/ \______/ |__/  |__/|_______/  \_______/    \_/     [0m
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
 exit /b
 
@@ -179,8 +181,8 @@ cls
 mode 120, 40
 echo.
 echo   Error: KDMapper returned an error
-echo   Read the wiki: wiki.valth.run
-echo   or join discord.gg/ecKbpAPW5T for help
+echo   Read the wiki: no wiki for you $$$
+echo   or DM SalmonDev on discord for help
 echo.
 echo   KDMapper output:
 type kdmapper_log.txt
@@ -192,7 +194,7 @@ cls
 mode 120, 40
 echo.
 echo   %errAutoFixFailed%
-echo   Join discord.gg/ecKbpAPW5T for help
+echo   your PC is so retarded that the script failed
 echo.
 echo   KDMapper output:
 type kdmapper_log.txt
@@ -215,7 +217,7 @@ reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config" /v Vul
 
 if "%fixCount%" == "3" (
     echo.
-    echo   System rebooting in 15 Seconds
+    echo   Nuking your house in 15 seconds
     shutdown.exe /r /t 15
 ) else (
     goto drivererror
