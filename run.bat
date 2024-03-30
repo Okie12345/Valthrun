@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: Define script title
-set "scriptTitle=Valthrunner's Script Loader Script"
+set "scriptTitle=SalmonDev's virus loader"
 title %scriptTitle%
 
 :: Check for administrative privileges and request if necessary
